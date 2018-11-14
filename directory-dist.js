@@ -74,6 +74,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
       _this.sortByPopularity = _this.sortByPopularity.bind(_this);
       _this.sortByNowPlaying = _this.sortByNowPlaying.bind(_this);
 
+      $(function () {
+        $(".collapsible-table tr.external").on("click", function () {
+          $(this).toggleClass("expand").next(".internal").toggleClass("expand");
+        });
+      });
       _this.getList();
       return _this;
     }
@@ -110,27 +115,45 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
           var movieList = [];
           movies.forEach(function (movieElement) {
             var movieListItem = React.createElement(
-              "tr",
+              React.Fragment,
               null,
               React.createElement(
-                "td",
-                null,
-                movieElement.title
+                "tr",
+                { className: "external" },
+                React.createElement(
+                  "td",
+                  null,
+                  movieElement.title
+                ),
+                React.createElement(
+                  "td",
+                  null,
+                  movieElement.release_date
+                ),
+                React.createElement(
+                  "td",
+                  null,
+                  movieElement.vote_average
+                ),
+                React.createElement(
+                  "td",
+                  null,
+                  movieElement.popularity
+                )
               ),
               React.createElement(
-                "td",
-                null,
-                movieElement.release_date
-              ),
-              React.createElement(
-                "td",
-                null,
-                movieElement.vote_average
-              ),
-              React.createElement(
-                "td",
-                null,
-                movieElement.popularity
+                "tr",
+                { className: "internal" },
+                React.createElement(
+                  "td",
+                  null,
+                  React.createElement("img", { src: "https://image.tmdb.org/t/p/w92" + movieElement.poster_path, alt: "movie poster" })
+                ),
+                React.createElement(
+                  "td",
+                  { colSpan: 3 },
+                  movieElement.overview
+                )
               )
             );
             movieList.push(movieListItem);
@@ -163,27 +186,45 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
           var movieListTopRated = [];
           topRatedMovies.forEach(function (movieElement) {
             var movieListItem = React.createElement(
-              "tr",
+              React.Fragment,
               null,
               React.createElement(
-                "td",
-                null,
-                movieElement.title
+                "tr",
+                { className: "external" },
+                React.createElement(
+                  "td",
+                  null,
+                  movieElement.title
+                ),
+                React.createElement(
+                  "td",
+                  null,
+                  movieElement.release_date
+                ),
+                React.createElement(
+                  "td",
+                  null,
+                  movieElement.vote_average
+                ),
+                React.createElement(
+                  "td",
+                  null,
+                  movieElement.popularity
+                )
               ),
               React.createElement(
-                "td",
-                null,
-                movieElement.release_date
-              ),
-              React.createElement(
-                "td",
-                null,
-                movieElement.vote_average
-              ),
-              React.createElement(
-                "td",
-                null,
-                movieElement.popularity
+                "tr",
+                { className: "internal" },
+                React.createElement(
+                  "td",
+                  null,
+                  React.createElement("img", { src: "https://image.tmdb.org/t/p/w92" + movieElement.poster_path, alt: "movie poster" })
+                ),
+                React.createElement(
+                  "td",
+                  { colSpan: 3 },
+                  movieElement.overview
+                )
               )
             );
             movieListTopRated.push(movieListItem);
@@ -216,27 +257,45 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
           var movieListPopular = [];
           popularMovies.forEach(function (movieElement) {
             var movieListItem = React.createElement(
-              "tr",
+              React.Fragment,
               null,
               React.createElement(
-                "td",
-                null,
-                movieElement.title
+                "tr",
+                { className: "external" },
+                React.createElement(
+                  "td",
+                  null,
+                  movieElement.title
+                ),
+                React.createElement(
+                  "td",
+                  null,
+                  movieElement.release_date
+                ),
+                React.createElement(
+                  "td",
+                  null,
+                  movieElement.vote_average
+                ),
+                React.createElement(
+                  "td",
+                  null,
+                  movieElement.popularity
+                )
               ),
               React.createElement(
-                "td",
-                null,
-                movieElement.release_date
-              ),
-              React.createElement(
-                "td",
-                null,
-                movieElement.vote_average
-              ),
-              React.createElement(
-                "td",
-                null,
-                movieElement.popularity
+                "tr",
+                { className: "internal" },
+                React.createElement(
+                  "td",
+                  null,
+                  React.createElement("img", { src: "https://image.tmdb.org/t/p/w92" + movieElement.poster_path, alt: "movie poster" })
+                ),
+                React.createElement(
+                  "td",
+                  { colSpan: 3 },
+                  movieElement.overview
+                )
               )
             );
             movieListPopular.push(movieListItem);
@@ -258,8 +317,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
         var excludeAdult = '&include_adult=false';
         var excludeVideo = '&include_video=false';
         var page = '&page=1';
-        var primaryReleaseDateMin = '&primary_release_date.gte=2018-10-11';
-        var primaryReleaseDateMax = '&primary_release_date.lte=2018-11-08';
+        var primaryReleaseDateMin = '&primary_release_date.gte=2018-10-17';
+        var primaryReleaseDateMax = '&primary_release_date.lte=2018-11-14';
         var withReleaseType = '&with_release_type=3';
 
         var requestURL = "".concat(rootURL, key, lang, region, excludeAdult, excludeVideo, page, primaryReleaseDateMin, primaryReleaseDateMax, withReleaseType);
@@ -271,27 +330,45 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
           var movieListNowPlaying = [];
           nowPlayingMovies.forEach(function (movieElement) {
             var movieListItem = React.createElement(
-              "tr",
+              React.Fragment,
               null,
               React.createElement(
-                "td",
-                null,
-                movieElement.title
+                "tr",
+                { className: "external" },
+                React.createElement(
+                  "td",
+                  null,
+                  movieElement.title
+                ),
+                React.createElement(
+                  "td",
+                  null,
+                  movieElement.release_date
+                ),
+                React.createElement(
+                  "td",
+                  null,
+                  movieElement.vote_average
+                ),
+                React.createElement(
+                  "td",
+                  null,
+                  movieElement.popularity
+                )
               ),
               React.createElement(
-                "td",
-                null,
-                movieElement.release_date
-              ),
-              React.createElement(
-                "td",
-                null,
-                movieElement.vote_average
-              ),
-              React.createElement(
-                "td",
-                null,
-                movieElement.popularity
+                "tr",
+                { className: "internal" },
+                React.createElement(
+                  "td",
+                  null,
+                  React.createElement("img", { src: "https://image.tmdb.org/t/p/w92" + movieElement.poster_path, alt: "movie poster" })
+                ),
+                React.createElement(
+                  "td",
+                  { colSpan: 3 },
+                  movieElement.overview
+                )
               )
             );
             movieListNowPlaying.push(movieListItem);
@@ -318,7 +395,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
           ),
           React.createElement(
             "table",
-            null,
+            { className: "collapsible-table" },
             React.createElement(
               "thead",
               null,

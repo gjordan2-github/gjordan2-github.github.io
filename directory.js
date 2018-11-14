@@ -36,6 +36,11 @@
       this.sortByPopularity = this.sortByPopularity.bind(this);
       this.sortByNowPlaying = this.sortByNowPlaying.bind(this);
 
+      $(function() {
+        $(".collapsible-table tr.external").on("click", function() {
+          $(this).toggleClass("expand").next(".internal").toggleClass("expand");
+        });
+      });
       this.getList();
     }
 
@@ -72,7 +77,8 @@
           var movieList = [];
           movies.forEach(function(movieElement) {
             var movieListItem = (
-                <tr>
+              <React.Fragment>
+                <tr className="external">
                   <td>
                     {movieElement.title}
                   </td>
@@ -86,6 +92,15 @@
                     {movieElement.popularity}
                   </td>
                 </tr>
+                <tr className="internal">
+                  <td>
+                    <img src={"https://image.tmdb.org/t/p/w92" + movieElement.poster_path} alt="movie poster" />
+                  </td>
+                  <td colSpan={3}>
+                    {movieElement.overview}
+                  </td>
+                </tr>
+              </React.Fragment>
             )
             movieList.push(movieListItem);
           })
@@ -117,7 +132,8 @@
       var movieListTopRated = [];
       topRatedMovies.forEach(function(movieElement) {
         var movieListItem = (
-              <tr>
+            <React.Fragment>
+              <tr className="external">
                 <td>
                   {movieElement.title}
                 </td>
@@ -131,6 +147,15 @@
                   {movieElement.popularity}
                 </td>
               </tr>
+              <tr className="internal">
+                <td>
+                  <img src={"https://image.tmdb.org/t/p/w92" + movieElement.poster_path} alt="movie poster" />
+                </td>
+                <td colSpan={3}>
+                  {movieElement.overview}
+                </td>
+              </tr>
+            </React.Fragment>
         )
         movieListTopRated.push(movieListItem);
       })
@@ -162,7 +187,8 @@
     var movieListPopular = [];
     popularMovies.forEach(function(movieElement) {
       var movieListItem = (
-            <tr>
+          <React.Fragment>
+            <tr className="external">
               <td>
                 {movieElement.title}
               </td>
@@ -176,6 +202,15 @@
                 {movieElement.popularity}
               </td>
             </tr>
+            <tr className="internal">
+              <td>
+                <img src={"https://image.tmdb.org/t/p/w92" + movieElement.poster_path} alt="movie poster" />
+              </td>
+              <td colSpan={3}>
+                {movieElement.overview}
+              </td>
+            </tr>
+          </React.Fragment>
       )
       movieListPopular.push(movieListItem);
     })
@@ -194,8 +229,8 @@
     var excludeAdult = '&include_adult=false';
     var excludeVideo = '&include_video=false';
     var page = '&page=1';
-    var primaryReleaseDateMin = '&primary_release_date.gte=2018-10-11';
-    var primaryReleaseDateMax = '&primary_release_date.lte=2018-11-08';
+    var primaryReleaseDateMin = '&primary_release_date.gte=2018-10-17';
+    var primaryReleaseDateMax = '&primary_release_date.lte=2018-11-14';
     var withReleaseType = '&with_release_type=3';
 
     var requestURL = "".concat(rootURL, key, lang, region, excludeAdult, excludeVideo, page, primaryReleaseDateMin, primaryReleaseDateMax, withReleaseType);
@@ -209,7 +244,8 @@
     var movieListNowPlaying = [];
     nowPlayingMovies.forEach(function(movieElement) {
       var movieListItem = (
-            <tr>
+          <React.Fragment>
+            <tr className="external">
               <td>
                 {movieElement.title}
               </td>
@@ -223,6 +259,15 @@
                 {movieElement.popularity}
               </td>
             </tr>
+            <tr className="internal">
+              <td>
+                <img src={"https://image.tmdb.org/t/p/w92" + movieElement.poster_path} alt="movie poster" />
+              </td>
+              <td colSpan={3}>
+                {movieElement.overview}
+              </td>
+            </tr>
+          </React.Fragment>
       )
       movieListNowPlaying.push(movieListItem);
     })
@@ -241,7 +286,7 @@
             <Filters currentCategory={this.state.currentCategory} updateCategoryState={this.updateCategoryState} />
           </div>
 
-          <table>
+          <table className="collapsible-table">
             <thead>
               <tr>
                 <th scope="col">Title</th>

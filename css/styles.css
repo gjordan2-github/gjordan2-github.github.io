@@ -40,6 +40,23 @@ tr:nth-child(even) {
 	background-color: #efefef;
 }
 
+tr.external:hover {
+	background-color: #B3B3B3;
+	color: #FFFFFF;
+}
+
+tr.external.expand {
+	border-bottom: 1px solid #2C9AB7;
+}
+
+tr.internal {
+	display: none;
+}
+
+tr.internal.expand {
+	display: table-row;
+}
+
 .movie-list p {
 	font-family: Arial;
 	padding: 10px;
@@ -222,6 +239,7 @@ footer .footer_column p {
 }
 .footer_banner {
 	background-color: #B3B3B3;
+	border-top: 1px solid #2C9AB7;
 	padding-top: 60px;
 	padding-bottom: 60PX;
 	margin-bottom: 0px;
