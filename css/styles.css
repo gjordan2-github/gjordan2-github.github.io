@@ -1,4 +1,11 @@
 @charset "UTF-8";
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 * {
 margin: 0;
@@ -146,6 +153,7 @@ ul li:hover a {
 	margin-left: 0px;
 	letter-spacing: 4px;
 	padding-top: 0px;
+	padding-left: 490px;
 }
 
 .main-class {
@@ -201,12 +209,16 @@ footer .footer_column p {
 	margin-left: 20px;
 	margin-right: 20px;
 }
+.button-class {
+	padding-left: 900px;
+	/*border: 5px solid green;*/
+}
 .button {
 	width: 200px;
 	margin-top: 40px;
-	margin-right: auto;
+	margin-right: 40px;
 	margin-bottom: auto;
-	margin-left: auto;
+	margin-left: 710px;
 	padding-top: 20px;
 	padding-right: 10px;
 	padding-bottom: 20px;
@@ -226,6 +238,11 @@ footer .footer_column p {
 	color: #C4C4C4;
 	cursor: pointer;
 }
+.notice {
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 25px;
+}
 .copyright {
 	text-align: center;
 	padding-top: 20px;
@@ -240,10 +257,21 @@ footer .footer_column p {
 .footer_banner {
 	background-color: #B3B3B3;
 	border-top: 1px solid #2C9AB7;
-	padding-top: 60px;
-	padding-bottom: 60PX;
+	padding-top: 20px;
+	padding-bottom: 10PX;
 	margin-bottom: 0px;
 	background-repeat: repeat;
+}
+.col-narrow {
+	width: 30%
+	float: left;
+	text-align: right;
+	padding-right: 20px;
+}
+.col-wide {
+	width: 70%;
+	float: left;
+	margin-top: 40px;
 }
 footer {
 	display: inline-block;
