@@ -229,8 +229,8 @@
     var excludeAdult = '&include_adult=false';
     var excludeVideo = '&include_video=false';
     var page = '&page=1';
-    var primaryReleaseDateMin = '&primary_release_date.gte=2018-10-17';
-    var primaryReleaseDateMax = '&primary_release_date.lte=2018-11-14';
+    var primaryReleaseDateMin = '&primary_release_date.gte=2018-11-07';
+    var primaryReleaseDateMax = '&primary_release_date.lte=2018-12-05';
     var withReleaseType = '&with_release_type=3';
 
     var requestURL = "".concat(rootURL, key, lang, region, excludeAdult, excludeVideo, page, primaryReleaseDateMin, primaryReleaseDateMax, withReleaseType);
