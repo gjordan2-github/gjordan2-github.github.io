@@ -37,7 +37,7 @@
       this.sortByNowPlaying = this.sortByNowPlaying.bind(this);
 
       $(function() {
-        $(".collapsible-table tr.external").on("click", function() {
+        $("tr.external").on("click", function() {
           $(this).toggleClass("expand").next(".internal").toggleClass("expand");
         });
       });

@@ -43,6 +43,7 @@ tr:nth-child(even) {
 tr.external:hover {
 	background-color: #B3B3B3;
 	color: #FFFFFF;
+  cursor: pointer;
 }
 tr.external.expand {
 	border-bottom: 1px solid #2C9AB7;

@@ -75,7 +75,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
       _this.sortByNowPlaying = _this.sortByNowPlaying.bind(_this);
 
       $(function () {
-        $(".collapsible-table tr.external").on("click", function () {
+        $("tr.external").on("click", function () {
           $(this).toggleClass("expand").next(".internal").toggleClass("expand");
         });
       });
