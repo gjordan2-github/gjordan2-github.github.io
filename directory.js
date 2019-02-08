@@ -65,7 +65,8 @@
       var excludeAdult = '&include_adult=false';
       var excludeVideo = '&include_video=false';
       var page = '&page=1';
-      var primaryYear = '&primary_release_year=2018';
+      var date = moment().format('YYYY');
+      var primaryYear = '&primary_release_year=date';
 
         var requestURL = "".concat(rootURL, key, lang, excludeAdult, excludeVideo, page, primaryYear);
         fetch(requestURL)
@@ -119,7 +120,8 @@
       var excludeAdult = '&include_adult=false';
       var excludeVideo = '&include_video=false';
       var page = '&page=1';
-      var primaryYear = '&primary_release_year=2018';
+      var date = moment().format('YYYY');
+      var primaryYear = '&primary_release_year=date';
 
       var requestURL = "".concat(rootURL, key, lang, sortBy, excludeAdult, excludeVideo, page, primaryYear);
       fetch(requestURL)
@@ -174,7 +176,8 @@
     var excludeAdult = '&include_adult=false';
     var excludeVideo = '&include_video=false';
     var page = '&page=1';
-    var primaryYear = '&primary_release_year=2018';
+    var date = moment().format('YYYY');
+    var primaryYear = '&primary_release_year=date';
 
     var requestURL = "".concat(rootURL, key, lang, sortBy, excludeAdult, excludeVideo, page, primaryYear);
     fetch(requestURL)
