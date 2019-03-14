@@ -74,12 +74,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
       _this.sortByPopularity = _this.sortByPopularity.bind(_this);
       _this.sortByNowPlaying = _this.sortByNowPlaying.bind(_this);
 
-      $(function () {
-        $("tr.external").on("click", function () {
-          $(this).toggleClass("expand").next(".internal").toggleClass("expand");
-        });
-      });
       _this.getList();
+
       return _this;
     }
 
@@ -161,6 +157,15 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
           });
 
           this.setState({ listItems: movieList });
+
+          {
+            console.log("Internal row was rendered");
+            $(function () {
+              $("tr.external").on("click", function () {
+                $(this).toggleClass("expand").next(".internal").toggleClass("expand");
+              });
+            });
+          }
         }.bind(this));
       }
 

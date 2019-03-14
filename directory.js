@@ -36,12 +36,10 @@
       this.sortByPopularity = this.sortByPopularity.bind(this);
       this.sortByNowPlaying = this.sortByNowPlaying.bind(this);
 
-      $(function() {
-        $("tr.external").on("click", function() {
-          $(this).toggleClass("expand").next(".internal").toggleClass("expand");
-        });
-      });
+
       this.getList();
+
+
     }
 
     updateCategoryState(value) {
@@ -57,6 +55,8 @@
         }
       );
     }
+
+
 
     getList() {
       var rootURL = 'https://api.themoviedb.org/3/discover/movie?api_key=';
@@ -101,6 +101,7 @@
                     {movieElement.overview}
                   </td>
                 </tr>
+
               </React.Fragment>
             )
             movieList.push(movieListItem);
@@ -108,6 +109,13 @@
 
           this.setState({listItems: movieList});
 
+          {console.log("Internal row was rendered")
+            $(function() {
+              $("tr.external").on("click", function() {
+                $(this).toggleClass("expand").next(".internal").toggleClass("expand");
+              });
+            });
+          }
         }.bind(this))
     }
 
@@ -283,6 +291,8 @@
   }.bind(this))
 }
 
+
+
     render() {
       return (
         <div className="movie-list">
@@ -309,4 +319,6 @@
   }
 
   ReactDOM.render(<List />, document.getElementById('movie-root'));
+
+
 })();
