@@ -36,10 +36,7 @@
       this.sortByPopularity = this.sortByPopularity.bind(this);
       this.sortByNowPlaying = this.sortByNowPlaying.bind(this);
 
-
       this.getList();
-
-
     }
 
     updateCategoryState(value) {
@@ -55,8 +52,6 @@
         }
       );
     }
-
-
 
     getList() {
       var rootURL = 'https://api.themoviedb.org/3/discover/movie?api_key=';
@@ -291,8 +286,6 @@
   }.bind(this))
 }
 
-
-
     render() {
       return (
         <div className="movie-list">
@@ -317,8 +310,5 @@
       );
     }
   }
-
   ReactDOM.render(<List />, document.getElementById('movie-root'));
-
-
 })();

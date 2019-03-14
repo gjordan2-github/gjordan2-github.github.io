@@ -75,7 +75,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
       _this.sortByNowPlaying = _this.sortByNowPlaying.bind(_this);
 
       _this.getList();
-
       return _this;
     }
 
