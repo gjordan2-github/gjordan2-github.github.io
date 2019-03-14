@@ -66,7 +66,7 @@
       var excludeVideo = '&include_video=false';
       var page = '&page=1';
       var date = moment().format('YYYY');
-      var primaryYear = '&primary_release_year=date';
+      var primaryYear = '&primary_release_year=' + date;
 
         var requestURL = "".concat(rootURL, key, lang, excludeAdult, excludeVideo, page, primaryYear);
         fetch(requestURL)
@@ -121,7 +121,7 @@
       var excludeVideo = '&include_video=false';
       var page = '&page=1';
       var date = moment().format('YYYY');
-      var primaryYear = '&primary_release_year=date';
+      var primaryYear = '&primary_release_year=' + date;
 
       var requestURL = "".concat(rootURL, key, lang, sortBy, excludeAdult, excludeVideo, page, primaryYear);
       fetch(requestURL)
@@ -177,7 +177,7 @@
     var excludeVideo = '&include_video=false';
     var page = '&page=1';
     var date = moment().format('YYYY');
-    var primaryYear = '&primary_release_year=date';
+    var primaryYear = '&primary_release_year=' + date;
 
     var requestURL = "".concat(rootURL, key, lang, sortBy, excludeAdult, excludeVideo, page, primaryYear);
     fetch(requestURL)
