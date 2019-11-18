@@ -55,7 +55,7 @@
 
     getList() {
       var rootURL = 'https://api.themoviedb.org/3/discover/movie?api_key=';
-      var key = '2403c0693916992487dd5abda2003c5f';
+      var key = '';
       var lang = '&language=en-US';
       var excludeAdult = '&include_adult=false';
       var excludeVideo = '&include_video=false';
