@@ -117,7 +117,7 @@
     // sort movie list by top rated
     sortByTopRated() {
       var rootURL = 'https://api.themoviedb.org/3/discover/movie?api_key=';
-      var key = '2403c0693916992487dd5abda2003c5f';
+      var key = '';
       var lang = '&language=en-US';
       var sortBy = '&sort_by=vote_average.desc';
       var excludeAdult = '&include_adult=false';
@@ -173,7 +173,7 @@
   // sort movie list by popularity
   sortByPopularity() {
     var rootURL = 'https://api.themoviedb.org/3/discover/movie?api_key=';
-    var key = '2403c0693916992487dd5abda2003c5f';
+    var key = '';
     var lang = '&language=en-US';
     var sortBy = '&sort_by=popularity.desc';
     var excludeAdult = '&include_adult=false';
@@ -229,7 +229,7 @@
   // sort movie list by now playing
   sortByNowPlaying() {
     var rootURL = 'https://api.themoviedb.org/3/discover/movie?api_key=';
-    var key = '2403c0693916992487dd5abda2003c5f';
+    var key = '';
     var lang = '&language=en-US';
     var region = '&region=US';
     var excludeAdult = '&include_adult=false';
